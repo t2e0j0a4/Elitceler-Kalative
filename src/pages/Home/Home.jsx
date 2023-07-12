@@ -212,7 +212,7 @@ const Home = () => {
                       <div className={blog__detail}>
                         <h5>{blog.title}</h5>
                         <p>{blog.description}</p>
-                        <Link to={`/blog/${blog.id}`}>Read</Link>
+                        <Link to={`/news/${blog.id}`}>Read</Link>
                       </div>
                     </div>
                   );
