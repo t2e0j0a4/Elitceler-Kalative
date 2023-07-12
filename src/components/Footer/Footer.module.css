@@ -1,0 +1,148 @@
+@import "/src/index.css";
+
+/* app__footer, footer__center, footer__side1, side1__detail, side1__links, footer__side, copyright__sec */
+
+.app__footer {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #F0F0F0;
+}
+
+.footer__center {
+    width: 1200px;
+    max-width: 100%;
+    padding: 2rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer__side1 {
+    width: 60%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.side1__detail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.side1__detail img {
+    object-fit: contain;
+}
+
+.side1__detail p {
+    color: #636363;
+    font-family: var(--f-bodoni);
+    font-size: 20px;
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.side1__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.side1__links a {
+    font-size: 24px;
+    color: #636363;
+    transition: color 0.2s ease;
+}
+
+.side1__links a:hover {
+    color: #232323;
+}
+
+.footer__side {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer__side p {
+    color: #636363;
+    font-family: var(--f-bodoni);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.footer__side ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer__side ul li a {
+    color: #939292;
+    font-family: var(--f-bodoni);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    transition: color 0.2s ease;
+}
+
+.footer__side ul li a:hover {
+    color: #636363;
+}
+
+.copyright__sec {
+    width: 100%;
+    background-color: #D9D8D7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #232323;
+    padding: 1rem 0.2rem;
+}
+
+.copyright__sec p {
+    color: #939393;
+    font-family: var(--f-bodoni);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+@media all and (max-width : 700px) {
+
+    .footer__side1 {
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width : 420px) {
+
+    .side1__detail {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+}

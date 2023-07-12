@@ -1,0 +1,178 @@
+@import "/src/index.css";
+
+/* app__navbar, nav__center, nav__logo, nav__links, nav__smscreen */
+
+.app__navbar {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+}
+
+.nav__center {
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 0 1rem;
+}
+
+.nav__logo {
+    width: 80px;
+    padding-top: 0.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__logo img {
+    width: 90%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;    
+}
+
+.nav__links li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.nav__links li a {
+    color: #575757;
+    font-family: var(--f-bodoni);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.nav__links li a:hover {
+    color: #232323;
+}
+
+.nav__links li div {
+    width: 0;
+    height: 0;
+}
+
+.nav__links li a.link__activated {
+    color: #232323;
+}
+
+.nav__links li div.link__activated {
+    width: 40px;
+    height: 6px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav__links li a ion-icon {
+    display: none;
+}
+
+.nav__smscreen {
+    display: none;
+}
+
+@media all and (max-width : 800px) {
+
+    .app__navbar {
+        position: relative;
+    }
+
+    .nav__links {
+        position: absolute;
+        width: 240px;
+        height: 90vh;
+        top: 80px;
+        right: -900px;
+        border: 1px solid #BDBDBD;
+        background: #FFFDD0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 2rem 1rem;
+        z-index: 9999;
+        transition: right 0.3s linear;
+    }
+
+    .nav__links.menu__activated {
+        right: 0;
+    }
+
+    .nav__links::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .nav__links li div {
+        display: none;
+    }
+
+    .nav__links li a {
+        font-size: 21px;
+        gap: 0.8rem;
+        font-weight: 500;
+    }
+
+    .nav__links li:nth-child(1) a.link__activated, .nav__links li:nth-child(2) a.link__activated, .nav__links li:nth-child(5) a.link__activated {
+        color: #54AFBC;
+    }
+
+    .nav__links li:nth-child(3) a.link__activated, .nav__links li:nth-child(6) a.link__activated {
+        color: #FE5C36;
+    }
+
+    .nav__links li:nth-child(4) a.link__activated {
+        color: #FFB449;
+    }
+
+    .nav__links li a ion-icon {
+        display: block;
+        font-size: 24px;
+    }
+
+    .nav__smscreen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav__smscreen button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .nav__smscreen button ion-icon {
+        font-size: 28px;
+        color: #54AFBC;
+    }
+
+
+}
