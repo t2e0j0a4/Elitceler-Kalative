@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./NotFound.module.css";
-import Page404 from "../../assets/Page404.jpg";
+import Page404 from "../../assets/Page404.svg";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
