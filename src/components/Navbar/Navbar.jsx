@@ -49,10 +49,6 @@ const Navbar = () => {
             <Link to='/newsletters' className={`${(location.pathname === '/newsletters' || location.pathname.includes('/news/')) && link__activated}`} ><ion-icon name="newspaper"></ion-icon> Newsletters</Link>
             <div style={{ backgroundColor : '#54AFBC' }} className={`${(location.pathname === '/newsletters' || location.pathname.includes('/news/')) && link__activated}`} ></div>
           </li>
-          <li onClick={() => {setToggleMenu(false)}} >
-            <Link to='/contact' className={`${location.pathname === '/contact' && link__activated}`} ><ion-icon name="call"></ion-icon> Contact Us</Link>
-            <div style={{ backgroundColor : '#FE5C36' }} className={`${location.pathname === '/contact' && link__activated}`} ></div>
-          </li>
         </ul>
 
         {/* Small screen menu */}
