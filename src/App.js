@@ -3,10 +3,9 @@ import React, { useEffect } from 'react'
 // Pages
 import Home from "./pages/Home/Home";
 import Blogs from "./pages/Blogs/Blogs";
-import Blog from "./pages/Blogs/Blog/Blog";
 import NotFound from "./pages/NotFound/NotFound";
 import Projects from "./pages/Projects/Projects";
-import News from "./pages/Newsletters/News/News";
+import Article from "./pages/Article/Article";
 import Newsletters from "./pages/Newsletters/Newsletters";
 
 // Components
@@ -30,8 +29,8 @@ const App = () => {
           <Route path='/' element={<Home/>} />
           <Route path='*' element={<NotFound/>} />
           <Route path='/blogs' element={<Blogs/>} />
-          <Route path='/news/:id' element={<News/>} />
-          <Route path='/blog/:id' element={<Blog/>} />
+          <Route path='/blog/:id' element={<Article/>} />
+          <Route path='/news/:id' element={<Article/>} />
           <Route path='/projects' element={<Projects/>} />
           <Route path='/newsletters' element={<Newsletters/>} />
         </Routes>

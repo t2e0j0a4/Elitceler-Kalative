@@ -1,1 +1,55 @@
 @import "/src/index.css";
+
+.app__blogs {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.blogs__center {
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+.blogs__head {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto 1rem;
+}
+
+.blogs__head h1 {
+    color: #FE5C36;
+    text-align: left;
+    font-family: var(--f-p);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.blogs__main {
+    width: 100%;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(3, 360px);
+    justify-content: center;
+    align-items: center;
+    gap: 3rem 2.4rem;
+}
+
+@media all and (max-width : 1200px) {
+    .blogs__main {
+        padding: 1rem 0;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width : 700px) {
+    .blogs__main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
