@@ -16,7 +16,7 @@
 .footer__center {
     width: 1200px;
     max-width: 100%;
-    padding: 2rem 0.5rem;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -50,7 +50,7 @@
 .side1__detail p {
     color: #636363;
     font-family: var(--f-p);
-    font-size: 20px;
+    font-size: 18px;
     width: 100%;
     font-style: normal;
     font-weight: 400;
