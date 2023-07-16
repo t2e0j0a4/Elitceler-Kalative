@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "./NotFound.module.css";
-import Page404 from "../../assets/Page404.svg";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
@@ -10,8 +9,6 @@ const NotFound = () => {
   return (
     <main className={app__nopage}>
       <div className={nopage__center}>
-        
-        <img src={Page404} alt="404" />
 
         <div className={nopage__redirect}>
           <h1>404</h1>
