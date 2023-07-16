@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -6,20 +6,8 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Bodoni MT';
-  src: url('/public/BodoniMT.ttf');
-}
-
-@font-face {
-  font-family: 'Migha';
-  src: url('/public/Migha-Regular.otf');
-}
-
 :root {
-  --f-gotu : 'Gotu', sans-serif;
-  --f-migha : 'Migha', sans-serif;
-  --f-bodoni : 'Bodoni MT', sans-serif;
+  --f-p : 'Poppins', sans-serif;
 }
 
 html {
