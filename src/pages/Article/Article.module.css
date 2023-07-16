@@ -99,6 +99,10 @@
         font-size: 30px;
     }
 
+    .article__desc img {
+        border-radius: 0;
+    }
+
     .article__desc p {
         font-size: 17px;
     }

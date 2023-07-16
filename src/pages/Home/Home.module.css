@@ -745,7 +745,7 @@
     /* Section 1 Starts */
 
     .section1__box1 {
-        padding: 0.5rem;
+        padding: 1.6rem 1rem;
     }
 
     /* Section 1 Ends */
@@ -780,13 +780,13 @@
     /* Section 1 Starts */
 
     .section1__box1 h2 {
-        font-size: 28px;
+        font-size: 32px;
         font-weight: 500;
     }
 
     .section1__box1 p {
         gap: 0.3rem;
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .section1__box1 p span {
