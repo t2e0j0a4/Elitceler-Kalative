@@ -92,39 +92,51 @@
     display: none;
 }
 
-.nav__smscreen {
-    display: none;
-}
-
-@media all and (max-width : 800px) {
+@media all and (max-width : 700px) {
 
     .app__navbar {
         position: relative;
     }
 
-    .nav__links {
-        position: absolute;
-        width: 240px;
-        height: 90vh;
-        top: 80px;
-        right: -900px;
-        border: 1px solid #BDBDBD;
-        background: #FFFDD0;
+    .nav__center {
+        height: 164px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: flex-start;
-        padding: 2rem 1rem;
-        z-index: 9999;
-        transition: right 0.3s linear;
+        gap: 1.2rem;
     }
 
-    .nav__links.menu__activated {
-        right: 0;
+    .nav__logo {
+        height: auto;
+    }
+
+    .nav__links {
+        position: absolute;
+        width: 100%;
+        height: 70px;
+        top: 94px;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 0 1rem;
+        overflow-x: scroll;
     }
 
     .nav__links::-webkit-scrollbar {
         width: 0;
+        height: 0;
+    }
+
+    .nav__links li:nth-child(2) {
+        display: none;
+    }
+
+    .nav__links li {
+        flex: 0 0 auto;
     }
 
     .nav__links li div {
@@ -132,47 +144,23 @@
     }
 
     .nav__links li a {
-        font-size: 21px;
+        padding: 0.4rem 0.8rem;
+        border-radius: 16px;
+        background-color: #fff;
+        border: 2px solid #232323;
+        font-size: 17px;
+    }
+
+
+    .nav__links li a.link__activated {
+        background-color: #FFC066;       
+    }
+
+}
+
+@media all and (max-width : 400px) {
+    .nav__links {
         gap: 0.8rem;
-        font-weight: 500;
+        padding: 0 0.6rem;
     }
-
-    .nav__links li:nth-child(1) a.link__activated, .nav__links li:nth-child(2) a.link__activated, .nav__links li:nth-child(5) a.link__activated {
-        color: #54AFBC;
-    }
-
-    .nav__links li:nth-child(3) a.link__activated, .nav__links li:nth-child(6) a.link__activated {
-        color: #FE5C36;
-    }
-
-    .nav__links li:nth-child(4) a.link__activated {
-        color: #FFB449;
-    }
-
-    .nav__links li a ion-icon {
-        display: block;
-        font-size: 24px;
-    }
-
-    .nav__smscreen {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav__smscreen button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-    }
-
-    .nav__smscreen button ion-icon {
-        font-size: 28px;
-        color: #54AFBC;
-    }
-
-
 }
