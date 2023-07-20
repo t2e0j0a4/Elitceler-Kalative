@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react'
 import styles from "./Home.module.css";
+import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
 import Kalative from "../../assets/Kalative.svg";
 import Philosphy from "../../assets/Philosphy.svg";
+import {v4 as uuidv4} from "uuid";
 import { homeWhyUs, homeObjectivies, homeTestimonials } from '../../constants';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Home = () => {
@@ -172,7 +173,7 @@ const Home = () => {
                   {
                     [...Array(totalTestis)].map((_, index) => {
                       return (
-                        <span key={new Date().getTime() * index + 1} onClick={() => {
+                        <span key={uuidv4()} onClick={() => {
                           setCurrentTesti(index);
                         }} className={`${(index === currenTesti) && activated}`}></span>
                       )
