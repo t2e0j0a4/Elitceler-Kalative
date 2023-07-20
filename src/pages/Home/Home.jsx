@@ -213,7 +213,7 @@ const Home = () => {
                           <div className={blog__frame}></div>
                           <div className={blog__detail}>
                             <h5>{blog.title.slice(0, 24)}...</h5>
-                            <p>{blog.description.slice(0, 54)}...</p>
+                            <p>{blog.description.slice(0, 64)}...</p>
                             <Link to={`/blog/${blog._id}`}>Read</Link>
                           </div>
                         </div>
@@ -254,7 +254,7 @@ const Home = () => {
                           <div className={blog__frame}></div>
                           <div className={blog__detail}>
                             <h5>{news.title.slice(0, 24)}...</h5>
-                            <p>{news.description.slice(0, 54)}...</p>
+                            <p>{news.description.slice(0, 64)}...</p>
                             <Link to={`/news/${news._id}`}>Read</Link>
                           </div>
                         </div>

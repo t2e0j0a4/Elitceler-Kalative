@@ -502,7 +502,7 @@
 
 .blog__detail h5 {
     font-family: var(--f-p);
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -536,7 +536,7 @@
 
 .blog__card:hover > img {
     position: static;
-    height: 210px;
+    height: 214px;
 }
 
 .blog__card:hover > .blog__frame {
@@ -547,7 +547,7 @@
     display: flex;
     color: #636363;
     font-family: var(--f-p);
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

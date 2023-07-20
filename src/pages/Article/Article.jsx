@@ -65,7 +65,7 @@ const Article = () => {
       }
 
       <div className={back__page}>
-        <Link to={`${location.pathname.includes('/blog/') ? '/blogs' : '/news'}`}><ion-icon name="chevron-back"></ion-icon> More {location.pathname.includes('/blog/') ? 'Blogs' : 'News'}</Link>
+        <Link to={`${location.pathname.includes('/blog/') ? '/blogs' : '/newsletters'}`}><ion-icon name="chevron-back"></ion-icon> More {location.pathname.includes('/blog/') ? 'Blogs' : 'News'}</Link>
       </div>
     </main>
   );
