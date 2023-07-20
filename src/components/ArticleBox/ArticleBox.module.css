@@ -3,7 +3,6 @@
 /* Width will be adjusted on Blogs & Newsletter pages. */
 
 .article__box {
-
     max-width: 100%;
     padding: 0.8rem;
     height: 100%;
@@ -13,7 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.2rem;
 }
 
@@ -27,7 +26,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.7rem;
     align-items: flex-start;
 }
 
@@ -49,7 +48,7 @@
     line-height: normal;
 }
 
-.article__detail a {
+.article__box > a {
     border-radius: 12px;
     border: 2px solid #1C1B1B;
     background: #FFC066;

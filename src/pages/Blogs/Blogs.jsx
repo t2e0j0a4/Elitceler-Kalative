@@ -1,10 +1,20 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import styles from "./Blogs.module.css";
+import Context from '../../context/createContext';
 import ArticleBox from "../../components/ArticleBox/ArticleBox";
 
 const Blogs = () => {
 
-  const { app__blogs, blogs__center, blogs__head, blogs__main } = styles;
+  const context = useContext(Context);
+  const { allData, fetchData, dataLoad } = context;
+
+  // On page render blogs will be fetched.
+  useEffect(() => {
+    fetchData('Blogs');
+    // eslint-disable-next-line
+  }, []);
+
+  const { app__blogs, blogs__center, blogs__head, blogs__main, page__load, empty__list } = styles;
 
   return (
 
@@ -17,9 +27,26 @@ const Blogs = () => {
         </div>
 
         {/* Blogs Show */}
-        <div className={blogs__main}>
-          <ArticleBox/>
-        </div>
+
+        {
+          dataLoad ? (
+            <div className={page__load}>
+              <p>Loading...</p>
+            </div>
+          ) : (
+            <div className={blogs__main}>
+              {
+                allData.length !== 0 ? (
+                  allData.map((item) => {
+                    return (
+                      <ArticleBox key={item._id} data={item} source="blogs" />
+                    )
+                  })
+                ) : <div className={empty__list}>New Blogs are coming soon!</div>
+              }
+            </div>
+          )
+        }
 
       </div>
     </main>

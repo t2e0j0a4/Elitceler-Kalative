@@ -124,7 +124,7 @@
         gap: 1.2rem;
         padding: 1rem;
         overflow-x: scroll;
-        background-color: #f0f0f0;
+        background-color: #dddddd;
     }
 
     .nav__links::-webkit-scrollbar {

@@ -15,6 +15,9 @@ import Footer from "./components/Footer/Footer";
 // React Router Dom
 import { Routes, Route, useLocation } from 'react-router-dom';
 
+// Context API
+import State from "./context/State.jsx";
+
 const App = () => {
   const location = useLocation();
   useEffect(() => {
@@ -25,15 +28,17 @@ const App = () => {
     <div className="app">
       <Navbar/>
       <div className="app__main">
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='*' element={<NotFound/>} />
-          <Route path='/blogs' element={<Blogs/>} />
-          <Route path='/blog/:id' element={<Article/>} />
-          <Route path='/news/:id' element={<Article/>} />
-          <Route path='/projects' element={<Projects/>} />
-          <Route path='/newsletters' element={<Newsletters/>} />
-        </Routes>
+        <State>
+          <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='*' element={<NotFound/>} />
+            <Route path='/blogs' element={<Blogs/>} />
+            <Route path='/blog/:id' element={<Article/>} />
+            <Route path='/news/:id' element={<Article/>} />
+            <Route path='/projects' element={<Projects/>} />
+            <Route path='/newsletters' element={<Newsletters/>} />
+          </Routes>
+        </State>
       </div>
       <Footer/>
     </div>

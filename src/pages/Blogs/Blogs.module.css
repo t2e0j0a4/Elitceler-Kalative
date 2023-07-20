@@ -41,6 +41,30 @@
     gap: 3rem 2.4rem;
 }
 
+.empty__list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    font-family: var(--f-p);
+    font-size: 21px;
+}
+
+.page__load {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0.5rem;
+}
+
+.page__load p {
+    font-family: var(--f-p);
+    font-size: 24px;
+}
+
 @media all and (max-width : 1200px) {
     .blogs__main {
         padding: 1rem 0;

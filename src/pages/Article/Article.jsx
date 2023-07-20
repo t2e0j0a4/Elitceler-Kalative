@@ -1,41 +1,71 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from "./Article.module.css";
 import Logo from "../../assets/Logo.svg";
-import Dummy from "../../assets/Dummy.jpeg";
+import Context from '../../context/createContext';
+import { Link, useParams, useLocation } from 'react-router-dom';
 
 const Article = () => {
 
-  const { app__article, article__center, article__head, head__published, article__desc } = styles;
+  const { id } = useParams();
+  const location = useLocation();
+  const context = useContext(Context);
+  const { dataLoad, fetchSingleItem, singleItem } = context;
+
+
+  useEffect(() => {
+    let pathBy = location.pathname.includes("/blog/") ? "Blog" : "News";
+    fetchSingleItem(id, pathBy);
+    // eslint-disable-next-line
+  }, [location, id]);
+
+
+  const { app__article, top__badge, page__load, article__center, article__head, head__published, article__desc, back__page } = styles;
+
+  const { title, description, writer, image, updatedAt } = singleItem;
 
   return (
-    <main className={app__article}>
-      <div className={article__center}>
-
-        {/* Title & Published Name + Date */}
-
-        <div className={article__head}>
-          <h1>Title of Article</h1>
-
-          <div className={head__published}>
-            <img src={Logo} alt="Kalative" />
-            <div>
-              <p>Kalative</p>
-              <p>16/07/2023</p>
-            </div>
+    <main className={app__article} >
+      {
+        dataLoad ? (
+          <div className={page__load}>
+            <p>Loading...</p>
           </div>
+        ) : (
+          <div className={article__center}>
 
-        </div>
+            {/* Badge */}
+            <div className={top__badge}>
+              <p>{location.pathname.includes('/blog/') ? 'Blog' : 'Newsletter'}</p>
+            </div>
 
-        {/* Article Image & Description */}
-        
-        <article className={article__desc}>
+            {/* Head : Title & Publish Details */}
 
-          <img src={Dummy} alt="Dummy" />
+            <div className={article__head}>
+              <h1>{title}</h1>
 
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum libero dolorum, dolor totam, quis illum, nobis sed aperiam repellendus aut consectetur laborum. Dignissimos dolorem debitis optio? Aperiam beatae provident quia, blanditiis accusantium architecto eos repellendus doloremque fugiat eveniet dolore dicta odio nemo ea hic vitae iure esse in repellat qui animi? Unde officiis distinctio quaerat accusamus voluptates cumque asperiores nisi optio quasi! Illum quas facere atque unde. Reprehenderit, nihil iure, nesciunt incidunt mollitia porro harum veniam voluptate dolor voluptatibus dolores reiciendis neque ut rem aut consequatur, nisi eaque. Voluptatum, amet nobis!</p>
+              <div className={head__published}>
+                <img src={Logo} alt="Kalative" />
+                <div>
+                  <p>{writer}</p>
+                  <p>{new Date(updatedAt).toLocaleDateString()}</p>
+                </div>
+              </div>
 
-        </article>
+            </div>
 
+            {/* Article : Blog/News Details */}
+            
+            <article className={article__desc}>
+              <img src={image !== '' ? image : Logo} alt={title} />
+              <p>{description}</p>
+            </article>
+
+          </div>
+        )
+      }
+
+      <div className={back__page}>
+        <Link to={`${location.pathname.includes('/blog/') ? '/blogs' : '/news'}`}><ion-icon name="chevron-back"></ion-icon> More {location.pathname.includes('/blog/') ? 'Blogs' : 'News'}</Link>
       </div>
     </main>
   );

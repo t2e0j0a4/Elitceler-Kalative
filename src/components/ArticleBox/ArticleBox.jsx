@@ -1,20 +1,21 @@
 import React from 'react'
 import styles from "./ArticleBox.module.css";
-import Dummy from "../../assets/Dummy.jpeg";
+import Logo from "../../assets/Logo.svg";
 import { Link } from 'react-router-dom';
 
-const ArticleBox = () => {
+const ArticleBox = ({data, source = "blogs"}) => {
 
   const { article__box, article__detail } = styles;
+  const { _id, title, description, image } = data;
 
   return (
-    <div className={article__box}>
-      <img src={Dummy} alt="Dummy" />
+    <div className={article__box} id={`${source === 'blogs' ? `blog__${_id}` : `news__${_id}` }`} >
+      <img src={image !== '' ? image : Logo} alt={title} />
       <div className={article__detail}>
-        <h3>Title of Article</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <Link to={'/'}>Read</Link>
+        <h3>{title.slice(0, 28 + 1)}...</h3>
+        <p>{description.slice(0, 108 + 1)}...</p>
       </div>
+      <Link to={`/${source === 'blogs' ? 'blog' : 'news'}/${_id}`}>Read</Link>
     </div>
   )
 }
