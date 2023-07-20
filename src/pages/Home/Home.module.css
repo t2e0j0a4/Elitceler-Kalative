@@ -536,7 +536,7 @@
 
 .blog__card:hover > img {
     position: static;
-    height: 200px;
+    height: 210px;
 }
 
 .blog__card:hover > .blog__frame {
@@ -562,7 +562,21 @@
     color: #232323;
 }
 
+.data__load {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.data__load  p {
+    font-family: var(--f-p);
+    font-size: 21px;
+    text-align: left;
+}
+
 /* Section 5,6 Ends */
+
 
 /* Media Queries */
 

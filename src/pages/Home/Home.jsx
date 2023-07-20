@@ -2,15 +2,43 @@ import React, {useState, useEffect} from 'react'
 import styles from "./Home.module.css";
 import Kalative from "../../assets/Kalative.svg";
 import Philosphy from "../../assets/Philosphy.svg";
-import { homeWhyUs, homeObjectivies, homeTestimonials, homeBlogsDemo, homeNewsDemo } from '../../constants';
+import { homeWhyUs, homeObjectivies, homeTestimonials } from '../../constants';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Home = () => {
 
-  const { app__home, home__main, home__section1, section1__box1, section1__box2, section1__box3, section1__box4, home__section2, section2__center, section2__head, section2__main, each__whyus, whyus__box, whyus__gif, home__section3, section3__center, section3__head, section3__main, section3__box, each__obj, home__section4, section4__center, section4__head, section4__main, section4__wrapper, testi__box, section4__toggles, activated, home__section56, section56__center, section56__head, section56__main, blog__card, blog__detail, blog__frame } = styles;
+  const { app__home, home__main, home__section1, section1__box1, section1__box2, section1__box3, section1__box4, home__section2, section2__center, section2__head, section2__main, each__whyus, whyus__box, whyus__gif, home__section3, section3__center, section3__head, section3__main, section3__box, each__obj, home__section4, section4__center, section4__head, section4__main, section4__wrapper, testi__box, section4__toggles, activated, home__section56, section56__center, section56__head, section56__main, blog__card, blog__detail, blog__frame, data__load } = styles;
 
   const [totalTestis] = useState(homeTestimonials.length);
-  const [currenTesti, setCurrentTesti] = useState(0); 
+  const [currenTesti, setCurrentTesti] = useState(0);
+
+  const HOST = 'http://localhost:5000';
+
+  const [homeBlogsDemo, setHomeBlogsDemo] = useState([]); 
+  const [homeNewsDemo, setHomeNewsDemo] = useState([]);
+
+  const [blogsLoad, setBlogsLoad] = useState(false);
+  const [newsLoad, setNewsLoad] = useState(false);
+
+  const fetchData = async (source) => {
+    const response = await axios.get(`${HOST}/api/${source}`);
+    if (source === 'Blogs') {
+      setBlogsLoad(true);
+      setHomeBlogsDemo(response.data.Blogs);
+      setBlogsLoad(false);
+    }
+    else {
+      setNewsLoad(true);
+      setHomeNewsDemo(response.data.News);
+      setNewsLoad(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchData('Blogs');
+    fetchData('News');
+  }, []);
 
   useEffect(() => {
 
@@ -169,23 +197,31 @@ const Home = () => {
               <Link to='/blogs'>View All</Link>
             </div>
 
-            <div className={section56__main}>
-              {
-                homeBlogsDemo.map((blog) => {
-                  return (
-                    <div className={blog__card}>
-                      <img src={blog.image} alt={blog.title} />
-                      <div className={blog__frame}></div>
-                      <div className={blog__detail}>
-                        <h5>{blog.title}</h5>
-                        <p>{blog.description}</p>
-                        <Link to={`/blog/${blog.id}`}>Read</Link>
-                      </div>
-                    </div>
-                  )
-                })
-              }
-            </div>
+            {
+              blogsLoad ? (
+                <div className={data__load}>
+                  <p>Wait! While we load our latest Blogs for you.</p>
+                </div>
+              ) : (
+                <div className={section56__main}>
+                  {
+                    homeBlogsDemo.slice(0,3).map((blog) => {
+                      return (
+                        <div className={blog__card}>
+                          <img src={blog.image} alt={blog.title} />
+                          <div className={blog__frame}></div>
+                          <div className={blog__detail}>
+                            <h5>{blog.title.slice(0, 24)}...</h5>
+                            <p>{blog.description.slice(0, 54)}...</p>
+                            <Link to={`/blog/${blog._id}`}>Read</Link>
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              )
+            }
 
           </div>
         </section>
@@ -202,23 +238,31 @@ const Home = () => {
               <Link to='/newsletters'>View All</Link>
             </div>
 
-            <div className={section56__main}>
-              {
-                homeNewsDemo.map((blog) => {
-                  return (
-                    <div className={blog__card}>
-                      <img src={blog.image} alt={blog.title} />
-                      <div className={blog__frame}></div>
-                      <div className={blog__detail}>
-                        <h5>{blog.title}</h5>
-                        <p>{blog.description}</p>
-                        <Link to={`/news/${blog.id}`}>Read</Link>
-                      </div>
-                    </div>
-                  );
-                })
-              }
-            </div>
+            {
+              newsLoad ? (
+                <div className={data__load}>
+                  <p>Wait! While we get our latest Newsletters for you.</p>
+                </div>
+              ) : (
+                <div className={section56__main}>
+                  {
+                    homeNewsDemo.slice(0,3).map((news) => {
+                      return (
+                        <div className={blog__card}>
+                          <img src={news.image} alt={news.title} />
+                          <div className={blog__frame}></div>
+                          <div className={blog__detail}>
+                            <h5>{news.title.slice(0, 24)}...</h5>
+                            <p>{news.description.slice(0, 54)}...</p>
+                            <Link to={`/news/${news._id}`}>Read</Link>
+                          </div>
+                        </div>
+                      );
+                    })
+                  }
+                </div>
+              )
+            }
 
           </div>
         </section>
