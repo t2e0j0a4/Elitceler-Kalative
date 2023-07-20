@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from "./Projects.module.css";
 import Drishtikon from "../../assets/DRISHTIKON.svg";
 import Kalaarth from "../../assets/KALAARTH.svg";
 import Pencil from "../../assets/Pencil.png";
 import Principles from "../../assets/Principles.svg";
+import Context from '../../context/createContext';
 
 const Projects = () => {
 
-  const { app__projects, pro__section1, section1__center, section1__details, section1__img, pro__section2, section2__center, section2__details, section2__img, pro__section3, section3__center, section3__head, drishti__box, drishti__text, drishti__carousal, drishti___wrap, drishti__slide1, drishti__slide2, drishti__slide3, drishti__slide4, drishti__slide5, drishti__btns, pro__section4, section4__center, section4__head, section4__main } = styles;
+  const { app__projects, pro__section1, section1__center, section1__details, section1__img, pro__section2, section2__center, section2__details, section2__img, pro__section3, section3__center, section3__head, drishti__box, drishti__text, drishti__carousal, drishti___wrap, drishti__slide1, drishti__slide2, drishti__slide3, drishti__slide4, drishti__slide5, drishti__btns, pro__section4, section4__center, section4__head, popup__form, form__inputs, section4__main, show__popup, popup__close } = styles;
+
+  // Carousal
 
   const [carousalRate, setCarousalRate] = useState(1);
 
@@ -24,8 +27,14 @@ const Projects = () => {
         return prev === 5 ? 1 : prev + 1 ;
       })
     }
-
   }
+
+  // Popup
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const context = useContext(Context);
+  const { downloadInputs, updateInputs, popupFormSubmit, deliveryMsg, showDeliveryMsg } = context;
 
   return (
     <main className={app__projects}>
@@ -166,8 +175,25 @@ const Projects = () => {
           {/* Heading */}
           <div className={section4__head}>
             <h1>कला Aarth</h1>
-            <button type='button'>Download</button>
+            <button type='button' onClick={() => {
+              setShowPopup(true);
+            }} >Download</button>
           </div>
+
+          {/* Download Popup */}
+          <form onSubmit={(e) => {popupFormSubmit(e)}} className={`${popup__form} ${showPopup ? show__popup : ''}`}>
+            <h2>Donwload Magazine</h2>
+            <button type='button' className={popup__close} onClick={() => {
+              setShowPopup(false);
+            }} ><ion-icon name="close"></ion-icon></button>
+            <div className={form__inputs}>
+              <input required type="text" name='name' value={downloadInputs.name} onChange={(e) => {updateInputs(e)}} placeholder='Full Name' />
+              <input required type="email" name='email' value={downloadInputs.email} onChange={(e) => {updateInputs(e)}} placeholder='Email' />
+              <input required type="text" name='mobile' value={downloadInputs.mobile} onChange={(e) => {updateInputs(e)}} placeholder='Mobile Number' />
+            </div>
+            <button type='submit'>Submit</button>
+            {showDeliveryMsg && <p>{deliveryMsg}</p>}
+          </form>
 
           {/* Main */}
           <div className={section4__main}>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import styles from "./Article.module.css";
 import Logo from "../../assets/Logo.svg";
 import Context from '../../context/createContext';
+import Loader from '../../components/Loader/Loader';
 import { Link, useParams, useLocation } from 'react-router-dom';
 
 const Article = () => {
@@ -28,7 +29,7 @@ const Article = () => {
       {
         dataLoad ? (
           <div className={page__load}>
-            <p>Loading...</p>
+            <Loader/>
           </div>
         ) : (
           <div className={article__center}>

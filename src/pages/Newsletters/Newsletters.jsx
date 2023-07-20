@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import styles from "./Newsletters.module.css";
 import Context from "../../context/createContext";
+import Loader from '../../components/Loader/Loader';
 import ArticleBox from "../../components/ArticleBox/ArticleBox";
 
 const Newsletters = () => {
@@ -28,7 +29,7 @@ const Newsletters = () => {
 
         {dataLoad ? (
           <div className={page__load}>
-            <p>Loading...</p>
+            <Loader/>
           </div>
         ) : (
           <div className={newsletters__main}>

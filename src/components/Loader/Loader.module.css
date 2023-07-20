@@ -1,0 +1,85 @@
+@-webkit-keyframes dominoes {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  60% {
+    -webkit-transform: rotate(calc(var(--rotation) * 1deg));
+    transform: rotate(calc(var(--rotation) * 1deg));
+  }
+  90%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(calc(var(--rotation) * 1deg));
+    transform: rotate(calc(var(--rotation) * 1deg));
+  }
+}
+@keyframes dominoes {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  60% {
+    -webkit-transform: rotate(calc(var(--rotation) * 1deg));
+    transform: rotate(calc(var(--rotation) * 1deg));
+  }
+  90%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(calc(var(--rotation) * 1deg));
+    transform: rotate(calc(var(--rotation) * 1deg));
+  }
+}
+
+.dominoes {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, 10px);
+  height: 40px;
+}
+
+.dominoes div {
+  --rotation: 68;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  transform-origin: bottom right;
+}
+
+.dominoes div:nth-child(1) {
+  -webkit-animation: dominoes 2s 0.2s infinite ease;
+  animation: dominoes 2s 0.2s infinite ease;
+  background-color: #FE5C36;
+}
+
+.dominoes div:nth-child(2) {
+  -webkit-animation: dominoes 2s 0.4s infinite ease;
+  animation: dominoes 2s 0.4s infinite ease;
+  background-color: #FFB449;
+}
+
+.dominoes div:nth-child(3) {
+  -webkit-animation: dominoes 2s 0.6s infinite ease;
+  animation: dominoes 2s 0.6s infinite ease;
+  background-color: #54AFBC;
+}
+
+.dominoes div:nth-child(4) {
+  -webkit-animation: dominoes 2s 0.8s infinite ease;
+  animation: dominoes 2s 0.8s infinite ease;
+  background-color: #0F172A;
+}
+
+.dominoes div:nth-child(5) {
+  -webkit-animation: dominoes 2s 1s infinite ease;
+  animation: dominoes 2s 1s infinite ease;
+  background-color: #FE5C36;
+  --rotation: 90;
+}

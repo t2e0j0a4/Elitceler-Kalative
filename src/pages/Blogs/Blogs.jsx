@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import styles from "./Blogs.module.css";
 import Context from '../../context/createContext';
+import Loader from '../../components/Loader/Loader';
 import ArticleBox from "../../components/ArticleBox/ArticleBox";
 
 const Blogs = () => {
@@ -31,7 +32,7 @@ const Blogs = () => {
         {
           dataLoad ? (
             <div className={page__load}>
-              <p>Loading...</p>
+              <Loader/>
             </div>
           ) : (
             <div className={blogs__main}>
