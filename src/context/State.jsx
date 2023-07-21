@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Context from "./createContext";
 import axios from "axios";
+import { saveAs } from "file-saver";
 
 const State = (props) => {
   const HOST = "http://localhost:5000";
@@ -63,7 +64,9 @@ const State = (props) => {
         }
       );
 
-      // Logic for downloading a magazine. Pending...
+      // Download Brochure.
+      const brochureUrl = process.env.PUBLIC_URL + "/downloads/Project कला Aarth.pdf";
+      saveAs(brochureUrl, "कला Aarth.pdf");
 
       setDeliveryMsg(response.data.message);
     

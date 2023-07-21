@@ -6,6 +6,7 @@ import Philosphy from "../../assets/Philosphy.svg";
 import {v4 as uuidv4} from "uuid";
 import { homeWhyUs, homeObjectivies, homeTestimonials } from '../../constants';
 import axios from 'axios';
+import { saveAs } from "file-saver";
 
 const Home = () => {
 
@@ -65,6 +66,12 @@ const Home = () => {
           <div className={section1__box1}>
             <h2>We are here to change the philosophy of Student Culture</h2>
             <p>We Curate <span></span> Create <span></span> Content</p>
+            <button type="button" onClick={() => {
+              
+              let downloadableFile = process.env.PUBLIC_URL + "/downloads/KALATIVE's Digital Handout.pdf";
+              saveAs(downloadableFile, "Kalative's Digital Handout.pdf" );
+
+            }}>Know More</button>
           </div>
           <div className={section1__box2}>
             <img src={Philosphy} alt="Philosphy" />
