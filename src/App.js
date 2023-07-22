@@ -11,6 +11,7 @@ import Newsletters from "./pages/Newsletters/Newsletters";
 // Components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import Powered from './components/Powered/Powered';
 
 // React Router Dom
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -40,6 +41,7 @@ const App = () => {
           </Routes>
         </State>
       </div>
+      <Powered/>
       <Footer/>
     </div>
   )

@@ -1,0 +1,44 @@
+@import "/src/index.css";
+
+.app__powered {
+    width: 100%;
+    max-width: 100%;
+    background-color: #1C1B1B;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 0.4rem;
+}
+
+.app__powered p {
+    color: #FFF;
+    font-family: var(--f-p);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.app__powered a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.app__powered img {
+    width: 70px;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media all and (max-width : 410px) {
+    .app__powered p {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .app__powered img {
+        width: 48px;
+    }
+}
