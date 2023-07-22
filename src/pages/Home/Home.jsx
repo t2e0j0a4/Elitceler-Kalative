@@ -7,10 +7,11 @@ import {v4 as uuidv4} from "uuid";
 import { homeWhyUs, homeObjectivies, homeTestimonials } from '../../constants';
 import axios from 'axios';
 import { saveAs } from "file-saver";
+import { homeTeam } from "../../constants";
 
 const Home = () => {
 
-  const { app__home, home__main, home__section1, section1__box1, section1__box2, section1__box3, section1__box4, home__section2, section2__center, section2__head, section2__main, each__whyus, whyus__box, whyus__gif, home__section3, section3__center, section3__head, section3__main, section3__box, each__obj, home__section4, section4__center, section4__head, section4__main, section4__wrapper, testi__box, section4__toggles, activated, home__section56, section56__center, section56__head, section56__main, blog__card, blog__detail, blog__frame, data__load } = styles;
+  const { app__home, home__main, home__section1, section1__box1, section1__box2, section1__box3, section1__box4, home__section2, section2__center, section2__head, section2__main, each__whyus, whyus__box, whyus__gif, home__section3, section3__center, section3__head, section3__main, section3__box, each__obj, home__section4, section4__center, section4__head, section4__main, section4__wrapper, testi__box, section4__toggles, activated, home__section56, section56__center, section56__head, section56__main, blog__card, blog__detail, blog__frame, data__load, home__section7, section7__center, section7__head, section7__main, each__member, member__details, member__socials } = styles;
 
   const [totalTestis] = useState(homeTestimonials.length);
   const [currenTesti, setCurrentTesti] = useState(0);
@@ -219,8 +220,10 @@ const Home = () => {
                           <img src={blog.image} alt={blog.title} />
                           <div className={blog__frame}></div>
                           <div className={blog__detail}>
-                            <h5>{blog.title.slice(0, 24)}...</h5>
-                            <p>{blog.description.slice(0, 64)}...</p>
+                            <div>
+                              <h5>{blog.title.slice(0, 24)}...</h5>
+                              <p>{blog.description.slice(0, 76)}...</p>
+                            </div>
                             <Link to={`/blog/${blog._id}`}>Read</Link>
                           </div>
                         </div>
@@ -260,8 +263,10 @@ const Home = () => {
                           <img src={news.image} alt={news.title} />
                           <div className={blog__frame}></div>
                           <div className={blog__detail}>
-                            <h5>{news.title.slice(0, 24)}...</h5>
-                            <p>{news.description.slice(0, 64)}...</p>
+                            <div>
+                              <h5>{news.title.slice(0, 24)}...</h5>
+                              <p>{news.description.slice(0, 76)}...</p>
+                            </div>
                             <Link to={`/news/${news._id}`}>Read</Link>
                           </div>
                         </div>
@@ -279,7 +284,42 @@ const Home = () => {
 
         {/* Section 7 - Team */}
 
-        {/* Later Soon... */}
+        <section className={home__section7}>
+          <div className={section7__center}>
+
+            <div className={section7__head}>
+              <h2>Our Team</h2>
+            </div>
+
+            <div className={section7__main}>
+              {
+                homeTeam.map((member) => {
+                  return (
+                    <div key={member.id} className={each__member}>
+                      <img src={member.image} alt={member.name} />
+                      <div className={member__details}>
+                        <h5>{member.name}</h5>
+                        <p>{member.role}</p>
+                      </div>
+                      <div className={member__socials}>
+                        {
+                          member.socials.map((social) => {
+                            return (
+                              <a href={social.link} target="_blank" rel="noreferrer">
+                                <ion-icon name={social.name}></ion-icon>
+                              </a>
+                            )
+                          })
+                        }
+                      </div>
+                    </div>
+                  )
+                })
+              }
+            </div>
+
+          </div>
+        </section>
 
         {/* Section 7 - Team */}
 

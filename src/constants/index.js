@@ -1,7 +1,9 @@
 import Gif1 from "../assets/HomeWhy1.gif";
 import Gif2 from "../assets/HomeWhy2.gif";
 import Gif3 from "../assets/HomeWhy3.gif";
+
 import dummy from "../assets/Dummy.jpeg";
+import Member from "../assets/Dummy.svg";
 
 const homeWhyUs = [
     {
@@ -114,4 +116,112 @@ const homeNewsDemo = [
     },
 ]
 
-export { homeWhyUs, homeObjectivies, homeTestimonials, homeBlogsDemo, homeNewsDemo };
+const homeTeam = [
+  {
+    id: 1,
+    image: Member,
+    name: "Aditya Havaldar",
+    role: "Founder & CEO",
+    socials: [
+      {
+        id: 1,
+        name: "logo-instagram",
+        link: "",
+      },
+      {
+        id: 2,
+        name: "logo-twitter",
+        link: "",
+      },
+      {
+        id: 3,
+        name: "logo-linkedin",
+        link: "",
+      },
+    ],
+  },
+  {
+    id: 2,
+    image: Member,
+    name: "Akshat Anand",
+    role: "Writer & Founder",
+    socials: [
+      {
+        id: 1,
+        name: "logo-instagram",
+        link: "",
+      },
+      {
+        id: 2,
+        name: "logo-twitter",
+        link: "",
+      },
+      {
+        id: 3,
+        name: "logo-linkedin",
+        link: "",
+      },
+    ],
+  },
+  {
+    id: 3,
+    image: Member,
+    name: "Kaashyap B.K",
+    role: "HEAD - BUSINESS",
+    socials: [
+      {
+        id: 1,
+        name: "logo-instagram",
+        link: "",
+      },
+      {
+        id: 2,
+        name: "logo-twitter",
+        link: "",
+      },
+      {
+        id: 3,
+        name: "logo-linkedin",
+        link: "",
+      },
+    ],
+  },
+  {
+    id: 4,
+    image: Member,
+    name: "Vishesh Agarwal",
+    role: "Program Manager",
+    socials: [
+      {
+        id: 1,
+        name: "logo-instagram",
+        link: "",
+      },
+      {
+        id: 2,
+        name: "logo-linkedin",
+        link: "",
+      },
+    ],
+  },
+  {
+    id: 5,
+    image: Member,
+    name: "Aryaveer Agarwal",
+    role: "Product Manager",
+    socials: [
+      {
+        id: 1,
+        name: "logo-instagram",
+        link: "",
+      },
+      {
+        id: 2,
+        name: "logo-linkedin",
+        link: "",
+      },
+    ],
+  },
+];
+
+export { homeWhyUs, homeObjectivies, homeTestimonials, homeBlogsDemo, homeNewsDemo, homeTeam };
