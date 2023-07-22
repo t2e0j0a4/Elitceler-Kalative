@@ -34,7 +34,7 @@ const Projects = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const context = useContext(Context);
-  const { downloadInputs, updateInputs, popupFormSubmit, deliveryMsg, showDeliveryMsg } = context;
+  const { downloadInputs, updateInputs, popupFormSubmit } = context;
 
   return (
     <main className={app__projects}>
@@ -192,7 +192,6 @@ const Projects = () => {
               <input required type="text" name='mobile' value={downloadInputs.mobile} onChange={(e) => {updateInputs(e)}} placeholder='Mobile Number' />
             </div>
             <button type='submit'>Submit</button>
-            {showDeliveryMsg && <p>{deliveryMsg}</p>}
           </form>
 
           {/* Main */}

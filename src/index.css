@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -8,6 +8,7 @@
 
 :root {
   --f-p : 'Poppins', sans-serif;
+  --f-s : 'Gotu', sans-serif;
 }
 
 html {

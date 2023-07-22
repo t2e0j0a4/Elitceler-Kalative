@@ -81,7 +81,7 @@ const Home = () => {
             <img src={Kalative} alt="Kalative" />
           </div>
           <div className={section1__box4}>
-            <h2>“कला tive is a content creating organization that aims to foster a <span>HOLISTIC DEVELOPMENT</span> in Students”</h2>
+            <h2>“<span>कला tive</span> is a content creating organization that aims to foster <span>HOLISTIC DEVELOPMENT</span> in Students”</h2>
           </div>
 
         </section>

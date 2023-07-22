@@ -25,9 +25,9 @@
     color: #FE5C36;
     text-align: left;
     font-family: var(--f-p);
-    font-size: 36px;
+    font-size: 44px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: normal;
 }
 
@@ -74,6 +74,18 @@
 }
 
 @media all and (max-width : 700px) {
+    .blogs__main {
+        grid-template-columns: repeat(1, 380px);
+    }
+}
+
+@media all and (max-width : 500px) {
+    .blogs__head h1 {
+        font-size: 36px;
+    }
+}
+
+@media all and (max-width : 400px) {
     .blogs__main {
         grid-template-columns: repeat(1, 1fr);
     }

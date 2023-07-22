@@ -122,8 +122,12 @@
     line-height: normal;
 }
 
-.section1__box4 h2 span {
+.section1__box4 h2 span:nth-child(2) {
     font-weight: 600;
+}
+
+.section1__box4 h2 span:nth-child(1) {
+    font-family: var(--f-s);
 }
 
 /* Section 1 Ends */
@@ -154,7 +158,7 @@
 .section2__head h2 {
     color: #FFB449;
     font-family: var(--f-p);
-    font-size: 34px;
+    font-size: 36px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -193,7 +197,7 @@
 .whyus__box h3 {
     color: #000;
     font-family: var(--f-p);
-    font-size: 26px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -292,7 +296,9 @@
 }
 
 .each__obj span {
-    padding: 8px;
+    width: 18px;
+    height: 18px;
+    margin-top: 0.4rem;
     border-radius: 50%;
     border: 2px solid #232323;
 }
@@ -367,7 +373,7 @@
 
 .testi__box p {
     width: 600px;
-    max-width: 100%;
+    max-width: 95%;
     color: #DDD;
     text-align: center;
     font-family: var(--f-p);
@@ -516,7 +522,7 @@
 
 .blog__detail h5 {
     font-family: var(--f-p);
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -720,6 +726,11 @@
         width: 100%;
     }
 
+    .section1__box4 h2 {
+        font-size: 38px;
+        width: 100%;
+    }
+
     /* Section 1 Ends */
 
 }
@@ -744,7 +755,7 @@
     }
 
     .section1__box4 h2 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     /* Section 1 Ends */
@@ -886,7 +897,7 @@
     }
 
     .testi__box p {
-        font-size: 22px;
+        font-size: 19px;
     }
 
     .testi__box h4 {
@@ -904,12 +915,12 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         padding: 1.6rem 1rem;
     }
 
     .section1__box1 h2 {
-        text-align: center;
+        text-align: left;
         word-break: normal;
     }
 
@@ -937,7 +948,62 @@
         height: 0;
     }
 
+    .section56__head a {
+        font-size: 15px;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .blog__detail h5 {
+        font-size: 17px;
+    }
+
     /* Section 5,6 Ends */
+
+    .section2__head h2, .section3__head h2, .section4__head h2, .section56__head h2, .section7__head h2 {
+        font-size: 32px;
+    }
+
+    /* Section 2 Starts */
+
+    .whyus__box h3 {
+        font-size: 21px;
+    }
+
+    .whyus__box p {
+        font-size: 15px;
+    }
+
+    /* Section 2 Ends */
+
+    /* Section 3 Starts */
+
+    .section3__main > p {
+        font-size: 20px;
+    }
+
+    .each__obj p {
+        width: 95%;
+        font-size: 16px;
+    }
+
+    .each__obj span {
+        padding: 4px;
+        margin-top: 0.3rem;
+    }
+
+    /* Section 3 Ends */
+
+    /* Section 4 Starts */
+
+    .testi__box p {
+        font-size: 16px;
+    }
+
+    .testi__box h4 {
+        font-size: 20px;
+    }
+
+    /* Section 4 Ends */
 }
 
 @media all and (max-width : 400px) {
@@ -945,7 +1011,7 @@
     /* Section 1 Starts */
 
     .section1__box1 h2 {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 500;
     }
 
@@ -954,24 +1020,22 @@
         font-size: 15px;
     }
 
+    .section1__box1 button {
+        font-size: 14px;
+        padding: 0.4rem 1rem;
+    }
+
     .section1__box1 p span {
         width: 12px;
         height: 12px;
     }
 
     .section1__box4 h2 {
-        font-size: 28px;
+        font-size: 21px;
     }
 
     /* Section 1 Ends */
 
-    /* Section 3 Starts */
-
-    .each__obj p {
-        width: 90%;
-    }
-
-    /* Section 3 Ends */
 
     /* Section 7 Starts */
 

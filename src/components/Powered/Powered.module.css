@@ -34,11 +34,11 @@
 
 @media all and (max-width : 410px) {
     .app__powered p {
-        font-size: 13px;
+        font-size: 15px;
         text-align: center;
     }
 
     .app__powered img {
-        width: 48px;
+        display: none;
     }
 }

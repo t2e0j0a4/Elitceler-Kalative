@@ -20,6 +20,22 @@
     width: 100%;
     border-radius: 8px;
     height: 200px;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+@media all and (max-width : 1200px) {
+    .article__box img {
+        height: 280px;
+    }
+}
+
+@media all and (max-width : 800px) {
+    .article__box img {
+        height: 200px;
+        object-position: top;
+    }
 }
 
 .article__detail {
@@ -58,4 +74,18 @@
     font-family: var(--f-p);
     font-size: 17px;
     color: #232323;
+}
+
+@media all and (max-width : 500px) {
+    .article__detail h3 {
+        font-size: 18px;
+    }
+
+    .article__detail p {
+        font-size: 14px;
+    }
+
+    .article__box > a {
+        font-size: 16px;
+    }
 }

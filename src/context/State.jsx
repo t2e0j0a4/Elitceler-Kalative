@@ -41,9 +41,6 @@ const State = (props) => {
     mobile: "",
   });
 
-  const [deliveryMsg, setDeliveryMsg] = useState("");
-  const [showDeliveryMsg, setShowDeliveryMsg] = useState(false);
-
   const updateInputs = (e) => {
     setDownloadInputs({ ...downloadInputs, [e.target.name]: e.target.value });
   };
@@ -65,19 +62,16 @@ const State = (props) => {
       );
 
       // Download Brochure.
-      const brochureUrl = process.env.PUBLIC_URL + "/downloads/Project कला Aarth.pdf";
-      saveAs(brochureUrl, "कला Aarth.pdf");
+      if (response.data) {
+        const brochureUrl = process.env.PUBLIC_URL + "/downloads/Project कला Aarth.pdf";
+        saveAs(brochureUrl, "कला Aarth.pdf");
+        window.alert(response.data.message);
+      }
 
-      setDeliveryMsg(response.data.message);
-    
     } else {
-      setDeliveryMsg("Empty Input Fields!");
+      window.alert('Make sure all fields are filled!');
     }
 
-    setShowDeliveryMsg(true);
-    setTimeout(() => {
-      setShowDeliveryMsg(false);
-    }, 5000);
     setDownloadInputs({ name: "", email: "", mobile: "" });
   };
 
@@ -91,9 +85,7 @@ const State = (props) => {
         fetchSingleItem,
         downloadInputs,
         updateInputs,
-        popupFormSubmit,
-        deliveryMsg,
-        showDeliveryMsg
+        popupFormSubmit
       }}
     >
       {props.children}
